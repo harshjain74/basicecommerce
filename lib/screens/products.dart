@@ -28,16 +28,15 @@ class _ProductScreenState extends State<ProductScreen> {
   Future<void> loadproducts() async {
     context
         .read<Vegetable>()
-        .addvegetable('images/vegetable0.jpg', 20, 1, 'Potato');
+        .addvegetable('images/potato.jpg', 20, 1, 'Potato');
     context
         .read<Vegetable>()
-        .addvegetable('images/vegetable1.jpg', 28, 1, 'Carrot');
+        .addvegetable('images/carrot.jpg', 28, 1, 'Carrot');
     context
         .read<Vegetable>()
-        .addvegetable('images/vegetable2.jpg', 40, 1, 'Tomato');
-    context
-        .read<Vegetable>()
-        .addvegetable('images/vegetable3.jpg', 60, 1, 'Lemon');
+        .addvegetable('images/tomato.jpg', 40, 1, 'Tomato');
+    context.read<Vegetable>().addvegetable('images/lemon.jpg', 60, 1, 'Lemon');
+    context.read<Vegetable>().addvegetable('images/onion.jpg', 60, 1, 'Onion');
   }
 
   @override
