@@ -4,6 +4,7 @@ import 'package:provider/provider.dart';
 import 'package:commerce/data/model.dart';
 import 'package:commerce/data/vegetable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flushbar/flushbar.dart';
 
 class ProductTile extends StatefulWidget {
   final String name;
@@ -83,7 +84,13 @@ class _ProductTileState extends State<ProductTile> {
                                       qty -= 250;
                                       price -= pricediff.toInt();
                                     } else {
-                                      print('its minimum');
+                                      Flushbar(
+                                        flushbarPosition:
+                                            FlushbarPosition.BOTTOM,
+                                        message: "Minimum quantity",
+                                        backgroundColor: Colors.green[300],
+                                        duration: Duration(seconds: 5),
+                                      )..show(context);
                                     }
                                   });
                                 },
@@ -111,7 +118,13 @@ class _ProductTileState extends State<ProductTile> {
                                           price += pricediff.toInt();
                                         }
                                       } else {
-                                        print('its maximum');
+                                        Flushbar(
+                                          flushbarPosition:
+                                              FlushbarPosition.BOTTOM,
+                                          message: "Maximum quantity",
+                                          backgroundColor: Colors.red[300],
+                                          duration: Duration(seconds: 5),
+                                        )..show(context);
                                       }
                                     });
                                   }),

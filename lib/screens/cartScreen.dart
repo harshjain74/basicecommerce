@@ -5,6 +5,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:commerce/data/model.dart';
 import 'ordersummary.dart';
+import 'package:flushbar/flushbar.dart';
 
 class CartScreen extends StatefulWidget {
   @override
@@ -131,7 +132,16 @@ class _CartScreenState extends State<CartScreen> with WidgetsBindingObserver {
                                                       price -=
                                                           pricediff.toInt();
                                                     } else {
-                                                      print('item deleted');
+                                                      Flushbar(
+                                                        flushbarPosition:
+                                                            FlushbarPosition
+                                                                .BOTTOM,
+                                                        message: "Item deleted",
+                                                        backgroundColor:
+                                                            Colors.green[300],
+                                                        duration: Duration(
+                                                            seconds: 5),
+                                                      )..show(context);
                                                     }
                                                     Provider.of<Vegetable>(
                                                             context,
@@ -186,7 +196,17 @@ class _CartScreenState extends State<CartScreen> with WidgetsBindingObserver {
                                                               pricediff.toInt();
                                                         }
                                                       } else {
-                                                        print('its maximum');
+                                                        Flushbar(
+                                                          flushbarPosition:
+                                                              FlushbarPosition
+                                                                  .BOTTOM,
+                                                          message:
+                                                              "maximum quantity added",
+                                                          backgroundColor:
+                                                              Colors.red[300],
+                                                          duration: Duration(
+                                                              seconds: 5),
+                                                        )..show(context);
                                                       }
                                                       Provider.of<Vegetable>(
                                                               context,

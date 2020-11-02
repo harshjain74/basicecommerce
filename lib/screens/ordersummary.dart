@@ -48,7 +48,7 @@ class _OrderSummaryState extends State<OrderSummary> {
               child: Container(
                   padding: EdgeInsets.symmetric(vertical: 20.0),
                   alignment: Alignment.center,
-                  color: Colors.lime,
+                  color: Colors.lime[200],
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
