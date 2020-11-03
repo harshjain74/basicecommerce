@@ -52,7 +52,20 @@ class _OrderSummaryState extends State<OrderSummary> {
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('We received your order Congrats '),
+                      Text(
+                        Provider.of<Vegetable>(context, listen: false)
+                                    .checkoutitemlength !=
+                                0
+                            ? 'We received your order Congrats!'
+                            : 'Sorry! You have no order!',
+                        style: TextStyle(
+                            color:
+                                Provider.of<Vegetable>(context, listen: false)
+                                            .checkoutitemlength !=
+                                        0
+                                    ? Colors.black
+                                    : Colors.red),
+                      ),
                       Text(
                           'Total items:${Provider.of<Vegetable>(context, listen: false).checkoutitemlength}'),
                     ],
